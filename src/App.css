@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/******************* Bubble Text CSS ********************/
+.bubble-text {
+  font-size: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  user-select: none;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  .wrapper {
+    .letter {
+      transition: ease-out 0.4s;
+      transform: translateY(40%);
+    }
+
+    .shadow {
+      transform: scale(1, -1);
+      color: #e2e2e294;
+      background-color: transparent;
+      transition: ease-in 0.4s, ease-out 0.4s;
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      .letter {
+        transform: translateY(-20%);
+      }
+
+      .shadow {
+        opacity: 0;
+        transform: translateY(20%);
+      }
+    }
+  }
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+
+
+.App {
+  font-family: sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown {
+  position: relative;
+  color: #333;
+  cursor: default;
+}
+
+.dropdown .arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: " ";
+  display: block;
+  height: 0;
+  margin-top: 0.3rem;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  width: 0;
+}
+
+.dropdown .arrow.open {
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+}
+
+.dropdown .selected-value input {
+  line-height: 1.5;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  width: 100%;
+}
+
+.dropdown .options {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdown .options.open {
+  display: block;
+}
+
+.dropdown .option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  display: flex;
+
+}
+
+.dropdown .option.selected,
+.dropdown .option:hover {
+  background-color: #f2f9fc;
+  color: #333;
 }
