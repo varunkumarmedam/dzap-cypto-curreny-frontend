@@ -1,19 +1,83 @@
+.home-page-bg {
+  background-image: url('https://img.freepik.com/free-vector/gold-luxury-background_52683-43998.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.main-content {
+  background-color: rgba(68, 68, 68, 0.772);
+  padding: 100px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 6px rgba(145, 145, 145, 1);
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  border-radius: 10px !important;
+  border: none;
+  font-size: 25px;
+  color: rgb(62, 62, 62);
+  width: 150px;
+  height: 50px;
+  background-color: rgb(210, 210, 210) !important;
+}
+
+.ml-2 {
+  margin-left: 6px;
+}
+
+.mr-2 {
+  margin-right: 6px;
+}
+
+.mr-3 {
+  margin-right: 14px;
+}
+
+.btn-container {
+  margin-top: 20px;
+  height: 60px;
+}
+
+.price-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(86, 145, 86);
+  color: white;
+  border-radius: 10px;
+  height: 50px;
+  box-shadow: 4px 4px 10px 2px rgba(145, 145, 145, 1);
+}
+
 /******************* Bubble Text CSS ********************/
 .bubble-text {
   font-size: 50px;
   display: flex;
   user-select: none;
   justify-content: center;
+  color: white;
 
   .wrapper {
     .letter {
       transition: ease-out 0.4s;
-      transform: translateY(40%);
+      transform: translateY(20%);
     }
 
     .shadow {
       transform: scale(1, -1);
-      color: #e2e2e294;
+      color: #4f4f4f94;
       background-color: transparent;
       transition: ease-in 0.4s, ease-out 0.4s;
       box-shadow: none !important;
@@ -32,22 +96,12 @@
   }
 }
 
-
-
-
-
-
-
-
-
-.App {
-  font-family: sans-serif;
-}
-
+/* Dropdown Component CSS */
 .dropdown {
   position: relative;
   color: #333;
   cursor: default;
+  border-radius: 10px;
 }
 
 .dropdown .arrow {
@@ -86,6 +140,7 @@
 .dropdown .options {
   display: none;
   background-color: #fff;
+  background-color: rgb(189, 189, 189);
   border: 1px solid #ccc;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -110,11 +165,152 @@
   display: block;
   padding: 8px 10px;
   display: flex;
-
 }
 
 .dropdown .option.selected,
 .dropdown .option:hover {
   background-color: #f2f9fc;
   color: #333;
+}
+
+/* Convert Button */
+.button-49,
+.button-49:after {
+  width: 200px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px -5px 0px #e100006c;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  animation: all ease 1s;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: 'Currency';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover {
+  box-shadow: 6px -5px 0px #8e00009a;
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+/* Conversion loader */
+.loader {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #000000;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border-left: 4px solid #ff0000;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

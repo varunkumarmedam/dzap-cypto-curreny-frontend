@@ -41,7 +41,7 @@ const CoinsDropdown = ({
     };
 
     return (
-        <div className="dropdown">
+        <div className="dropdown mr-2">
             <div className="control">
                 <div className="selected-value">
                     <input
@@ -68,7 +68,7 @@ const CoinsDropdown = ({
                                 }`}
                             key={`${id}-${index}`}
                         >
-                            <img src={option['logo']} height={'20'} />
+                            {option['logo'] && <img className="mr-2" src={option['logo']} height={'20'} />}
                             {option[label]}
                         </div>
                     );
